@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  actitrip-db:
+    image: postgres:14
+    container_name: core-services-db
+    environment:
+      POSTGRES_DB: core-services
+      POSTGRES_USER: actitrip
+      POSTGRES_PASSWORD: actitrip
+    volumes:
+      - /home/admin-msmida/actitrip/data/db/multidatabases:/docker-entrypoint-initdb.d
+      - /home/admin-msmida/actitrip/data/db/data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+
