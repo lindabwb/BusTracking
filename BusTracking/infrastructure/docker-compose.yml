@@ -1,15 +1,21 @@
 version: '3.7'
 services:
-  actitrip-db:
-    image: postgres:14
-    container_name: core-services-db
+  postgres-provider:
+    image: postgres
+    container_name: postgres-provider
     environment:
-      POSTGRES_DB: core-services
-      POSTGRES_USER: actitrip
-      POSTGRES_PASSWORD: actitrip
-    volumes:
-      - /home/admin-msmida/actitrip/data/db/multidatabases:/docker-entrypoint-initdb.d
-      - /home/admin-msmida/actitrip/data/db/data:/var/lib/postgresql/data
+      POSTGRES_DB: database_name
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: db_password
     ports:
-      - "5434:5432"
+      - "5432:5432"
 
+  core-services-db:
+   image: postgres
+   container_name: core-services-database
+   environment:
+     POSTGRES_DB: core-services
+     POSTGRES_USER: actitrip
+     POSTGRES_PASSWORD: actitrip
+   ports:
+     - "5434:5432"

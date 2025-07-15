@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <!-- ChangeSet 1: Create all tables with auto-increment for H2 -->
+    <changeSet id="ddl_create_tables" author="you">
+
+        <!-- alert table -->
+        <createTable tableName="alert">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="CPK_ALERT_TABLE"/>
+            </column>
+            <column name="uuid" type="varchar(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="etag" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="alert_time" type="timestamp"/>
+            <column name="seen" type="boolean"/>
+            <column name="trip_back" type="boolean"/>
+            <column name="alert_flag_id_ref" type="bigint"/>
+            <column name="line_id_ref" type="bigint"/>
+            <column name="bus_id_ref" type="bigint"/>
+        </createTable>
+
+        <!-- alert_flag table -->
+        <createTable tableName="alert_flag">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="CPK_ALERT_FLAG_TABLE"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+
+        <!-- bus table -->
+        <createTable tableName="bus">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="CPK_BUS_TABLE"/>
+            </column>
+            <column name="number" type="varchar(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+
+        <!-- day_flag_ar table -->
+        <createTable tableName="day_flag_ar">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="CPK_DAY_FLAG_AR_TABLE"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+
+        <!-- day_flag_fr table -->
+        <createTable tableName="day_flag_fr">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="CPK_DAY_FLAG_FR_TABLE"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+
+        <!-- day_of_year table -->
+        <createTable tableName="day_of_year">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="CPK_DAY_OF_YEAR_TABLE"/>
+            </column>
+            <column name="day" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="month" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="year" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="day_flag_ar_id_ref" type="bigint"/>
+            <column name="day_flag_fr_id_ref" type="bigint"/>
+        </createTable>
+
+        <!-- Foreign keys -->
+        <addForeignKeyConstraint baseColumnNames="alert_flag_id_ref"
+                                 baseTableName="alert"
+                                 constraintName="fk_alert_alert_flag_id_ref"
+                                 referencedColumnNames="id"
+                                 referencedTableName="alert_flag"/>
+
+        <addForeignKeyConstraint baseColumnNames="bus_id_ref"
+                                 baseTableName="alert"
+                                 constraintName="fk_alert_bus_id_ref"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bus"/>
+
+        <addForeignKeyConstraint baseColumnNames="day_flag_ar_id_ref"
+                                 baseTableName="day_of_year"
+                                 constraintName="fk_day_of_year_day_flag_ar_id_ref"
+                                 referencedColumnNames="id"
+                                 referencedTableName="day_flag_ar"/>
+
+        <addForeignKeyConstraint baseColumnNames="day_flag_fr_id_ref"
+                                 baseTableName="day_of_year"
+                                 constraintName="fk_day_of_year_day_flag_fr_id_ref"
+                                 referencedColumnNames="id"
+                                 referencedTableName="day_flag_fr"/>
+
+    </changeSet>
+
+    <!-- ChangeSet 2: Define sequences only for PostgreSQL -->
+    <changeSet id="ddl_add_sequences" author="you">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <dbms type="h2"/>
+            </not>
+        </preConditions>
+
+        <!-- These sequences will only be created when NOT using H2 -->
+        <createSequence sequenceName="ALERT_ID_SEQ" startValue="101" incrementBy="50"/>
+        <createSequence sequenceName="ALERT_FLAG_ID_SEQ" startValue="101" incrementBy="50"/>
+        <createSequence sequenceName="BUS_ID_SEQ" startValue="101" incrementBy="50"/>
+        <createSequence sequenceName="DAY_FLAG_AR_ID_SEQ" startValue="101" incrementBy="50"/>
+        <createSequence sequenceName="DAY_FLAG_FR_ID_SEQ" startValue="101" incrementBy="50"/>
+        <createSequence sequenceName="DAY_OF_YEAR_ID_SEQ" startValue="101" incrementBy="50"/>
+    </changeSet>
+
+</databaseChangeLog>

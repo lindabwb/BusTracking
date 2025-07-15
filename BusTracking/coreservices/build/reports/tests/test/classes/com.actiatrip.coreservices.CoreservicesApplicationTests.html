@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - CoreservicesApplicationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>CoreservicesApplicationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.actiatrip.coreservices.html">com.actiatrip.coreservices</a> &gt; CoreservicesApplicationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.549s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">contextLoads()</td>
+<td class="success">0.549s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>16:36:56.370 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.actiatrip.coreservices.CoreservicesApplicationTests]: CoreservicesApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:36:56.479 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.actiatrip.coreservices.CoreservicesApplication for test class com.actiatrip.coreservices.CoreservicesApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.3)
+
+2025-07-14T16:36:56.851+01:00  INFO 29848 --- [core-services] [    Test worker] c.a.c.CoreservicesApplicationTests       : Starting CoreservicesApplicationTests using Java 17.0.4.1 with PID 29848 (started by ogaalich in F:\actitrip stage ete\actirip v1\BusTracking\BusTracking\coreservices)
+2025-07-14T16:36:56.853+01:00  INFO 29848 --- [core-services] [    Test worker] c.a.c.CoreservicesApplicationTests       : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-07-14T16:36:57.414+01:00  INFO 29848 --- [core-services] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-14T16:36:57.441+01:00  INFO 29848 --- [core-services] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 JPA repository interfaces.
+2025-07-14T16:36:57.812+01:00  INFO 29848 --- [core-services] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-14T16:36:58.008+01:00  INFO 29848 --- [core-services] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-07-14T16:36:58.010+01:00  INFO 29848 --- [core-services] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-14T16:36:58.084+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.database                       : Set default schema name to PUBLIC
+2025-07-14T16:36:58.174+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.ui                             : INFO: The drop-all command may result in unrecoverable destructive changes to objects at 'jdbc:h2:mem:testdb'.
+To protect against unwanted drops, set --requireForce=true, which will require a --force=true flag on the command.
+Learn more at https://docs.liquibase.com/dropall.
+
+2025-07-14T16:36:58.222+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.snapshot                       : Creating snapshot
+2025-07-14T16:36:58.324+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.lockservice                    : Successfully acquired change log lock
+2025-07-14T16:36:58.328+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.command                        : Dropping Database Objects in schema: TESTDB.PUBLIC
+2025-07-14T16:36:58.333+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.snapshot                       : Creating snapshot
+2025-07-14T16:36:58.363+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.snapshot                       : Creating snapshot
+2025-07-14T16:36:58.394+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.database                       : Successfully deleted all supported object types in schema TESTDB.PUBLIC.
+2025-07-14T16:36:58.395+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.snapshot                       : Creating snapshot
+2025-07-14T16:36:58.396+01:00  WARN 29848 --- [core-services] [    Test worker] liquibase.lockservice                    : Failed to release change log lock
+2025-07-14T16:36:58.397+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.snapshot                       : Creating snapshot
+2025-07-14T16:36:58.398+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.ui                             : All objects dropped from SA@jdbc:h2:mem:testdb
+2025-07-14T16:36:58.399+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.command                        : Command execution complete
+2025-07-14T16:36:59.743+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.changelog                      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2025-07-14T16:36:59.747+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2025-07-14T16:36:59.750+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.snapshot                       : Creating snapshot
+2025-07-14T16:36:59.829+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.lockservice                    : Successfully acquired change log lock
+2025-07-14T16:36:59.829+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.command                        : Using deploymentId: 2507417771
+2025-07-14T16:36:59.831+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2025-07-14T16:36:59.860+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.ui                             : Running Changeset: db/changelog/db.changelog-init-schema.xml::ddl_create_tables::you
+2025-07-14T16:36:59.874+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.changelog                      : Table alert created
+2025-07-14T16:36:59.876+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.changelog                      : Table alert_flag created
+2025-07-14T16:36:59.878+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.changelog                      : Table bus created
+2025-07-14T16:36:59.880+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.changelog                      : Table day_flag_ar created
+2025-07-14T16:36:59.882+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.changelog                      : Table day_flag_fr created
+2025-07-14T16:36:59.885+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.changelog                      : Table day_of_year created
+2025-07-14T16:36:59.891+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.changelog                      : Foreign key constraint added to alert (alert_flag_id_ref)
+2025-07-14T16:36:59.893+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.changelog                      : Foreign key constraint added to alert (bus_id_ref)
+2025-07-14T16:36:59.897+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.changelog                      : Foreign key constraint added to day_of_year (day_flag_ar_id_ref)
+2025-07-14T16:36:59.899+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.changelog                      : Foreign key constraint added to day_of_year (day_flag_fr_id_ref)
+2025-07-14T16:36:59.899+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.changelog                      : ChangeSet db/changelog/db.changelog-init-schema.xml::ddl_create_tables::you ran successfully in 37ms
+2025-07-14T16:36:59.905+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.ui                             : Running Changeset: db/changelog/db.changelog-init-schema.xml::ddl_add_sequences::you
+2025-07-14T16:36:59.907+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.changelog                      : Marking ChangeSet: &quot;db/changelog/db.changelog-init-schema.xml::ddl_add_sequences::you&quot; as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/db.changelog.xml : Not precondition failed
+
+2025-07-14T16:36:59.915+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.util                           : UPDATE SUMMARY
+2025-07-14T16:36:59.915+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.util                           : Run:                          2
+2025-07-14T16:36:59.915+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.util                           : Previously run:               0
+2025-07-14T16:36:59.915+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.util                           : Filtered out:                 0
+2025-07-14T16:36:59.915+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.util                           : -------------------------------
+2025-07-14T16:36:59.915+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.util                           : Total change sets:            2
+2025-07-14T16:36:59.916+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.util                           : Update summary generated
+2025-07-14T16:36:59.920+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.command                        : Update command completed successfully.
+2025-07-14T16:36:59.920+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 2
+2025-07-14T16:36:59.922+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.lockservice                    : Successfully released change log lock
+2025-07-14T16:36:59.922+01:00  INFO 29848 --- [core-services] [    Test worker] liquibase.command                        : Command execution complete
+2025-07-14T16:37:00.026+01:00  INFO 29848 --- [core-services] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-14T16:37:00.096+01:00  INFO 29848 --- [core-services] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.18.Final
+2025-07-14T16:37:00.138+01:00  INFO 29848 --- [core-services] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-14T16:37:00.415+01:00  INFO 29848 --- [core-services] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-14T16:37:00.514+01:00  INFO 29848 --- [core-services] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-14T16:37:00.854+01:00  INFO 29848 --- [core-services] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-14T16:37:00.859+01:00  INFO 29848 --- [core-services] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-14T16:37:00.981+01:00  WARN 29848 --- [core-services] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14T16:37:01.399+01:00  INFO 29848 --- [core-services] [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-07-14T16:37:01.506+01:00  INFO 29848 --- [core-services] [    Test worker] c.a.c.CoreservicesApplicationTests       : Started CoreservicesApplicationTests in 4.882 seconds (process running for 6.104)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 8.14.2</a> at 14 juil. 2025, 16:37:02</p>
+</div>
+</div>
+</body>
+</html>
