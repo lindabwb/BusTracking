@@ -44,6 +44,7 @@
             <column name="number" type="varchar(255)">
                 <constraints nullable="false" unique="true"/>
             </column>
+            <column name="headsign_id_ref" type="bigint"/>
         </createTable>
 
         <!-- day_flag_ar table -->
@@ -84,6 +85,21 @@
             <column name="day_flag_fr_id_ref" type="bigint"/>
         </createTable>
 
+        <!-- headsign table -->
+        <createTable tableName="headsign">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="CPK_HEADSIGN_TABLE"/>
+            </column>
+            <column name="uuid" type="varchar(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="etag" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="serial_number" type="varchar(255)"/>
+            <column name="model" type="varchar(255)"/>
+        </createTable>
+
         <!-- Foreign keys -->
         <addForeignKeyConstraint baseColumnNames="alert_flag_id_ref"
                                  baseTableName="alert"
@@ -109,6 +125,12 @@
                                  referencedColumnNames="id"
                                  referencedTableName="day_flag_fr"/>
 
+        <addForeignKeyConstraint baseTableName="bus"
+                                 baseColumnNames="headsign_id_ref"
+                                 constraintName="fk_bus_headsign_id_ref"
+                                 referencedTableName="headsign"
+                                 referencedColumnNames="id"/>
+
     </changeSet>
 
     <!-- ChangeSet 2: Define sequences only for PostgreSQL -->
@@ -126,6 +148,7 @@
         <createSequence sequenceName="DAY_FLAG_AR_ID_SEQ" startValue="101" incrementBy="50"/>
         <createSequence sequenceName="DAY_FLAG_FR_ID_SEQ" startValue="101" incrementBy="50"/>
         <createSequence sequenceName="DAY_OF_YEAR_ID_SEQ" startValue="101" incrementBy="50"/>
+        <createSequence sequenceName="HEADSIGN_ID_SEQ" startValue="101" incrementBy="50"/>
     </changeSet>
 
 </databaseChangeLog>
