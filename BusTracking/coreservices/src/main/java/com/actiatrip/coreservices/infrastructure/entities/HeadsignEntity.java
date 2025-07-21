@@ -10,6 +10,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class HeadsignEntity extends AggregateRootEntity implements Serializable {
 
     private static final long serialVersionUID = 1874285261363829828L;

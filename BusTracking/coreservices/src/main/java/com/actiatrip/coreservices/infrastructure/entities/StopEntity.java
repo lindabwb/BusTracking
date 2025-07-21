@@ -11,6 +11,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class StopEntity extends AggregateRootEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 

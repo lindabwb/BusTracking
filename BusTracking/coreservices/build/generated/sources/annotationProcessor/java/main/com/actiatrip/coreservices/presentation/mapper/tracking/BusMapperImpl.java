@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-07-17T13:55:37+0200",
-    comments = "version: 1.4.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.14.2.jar, environment: Java 17.0.15 (Amazon.com Inc.)"
+    date = "2025-07-21T15:30:59+0200",
+    comments = "version: 1.5.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.14.2.jar, environment: Java 17.0.15 (Amazon.com Inc.)"
 )
 @Component
 public class BusMapperImpl implements BusMapper {
@@ -38,6 +38,11 @@ public class BusMapperImpl implements BusMapper {
 
         BusResponseDto busResponseDto = new BusResponseDto();
 
+        busResponseDto.setUuid( busAggregate.getUuid() );
+        busResponseDto.setRegistrationPlate( busAggregate.getRegistrationPlate() );
+        busResponseDto.setActive( busAggregate.getActive() );
+        busResponseDto.setTrackingDeviceId( busAggregate.getTrackingDeviceId() );
+
         return busResponseDto;
     }
 
@@ -48,6 +53,10 @@ public class BusMapperImpl implements BusMapper {
         }
 
         BusAggregate busAggregate = new BusAggregate();
+
+        busAggregate.setRegistrationPlate( busRequestDto.getRegistrationPlate() );
+        busAggregate.setActive( busRequestDto.getActive() );
+        busAggregate.setTrackingDeviceId( busRequestDto.getTrackingDeviceId() );
 
         return busAggregate;
     }

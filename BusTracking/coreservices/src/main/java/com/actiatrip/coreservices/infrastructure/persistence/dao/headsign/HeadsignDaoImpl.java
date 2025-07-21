@@ -7,7 +7,7 @@ import java.util.Optional;
 import com.actiatrip.coreservices.application.domaine.aggregat.HeadsignAggregate;
 import com.actiatrip.coreservices.application.service.headsign.HeadsignDao;
 import com.actiatrip.coreservices.infrastructure.entities.HeadsignEntity;
-import com.actiatrip.coreservices.infrastructure.persistence.dao.JpaRepositoryExecutor;
+import com.actiatrip.coreservices.infrastructure.persistence.repository.core.JpaRepositoryExecutor;
 import com.actiatrip.coreservices.infrastructure.persistence.mapper.HeadsignEntityMapper;
 import com.actiatrip.coreservices.infrastructure.persistence.repository.HeadsignRepository;
 import org.springframework.beans.factory.annotation.Autowired;

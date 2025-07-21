@@ -12,6 +12,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
+@Entity
 public class AlertEntity extends AggregateRootEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 

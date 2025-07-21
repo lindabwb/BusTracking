@@ -5,16 +5,16 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Data;
 
 @Data
-@JsonPropertyOrder({"id", "registration_number", "status", "tracking_device_id"})
+@JsonPropertyOrder({"id", "registration_plate", "active", "tracking_device_id"})
 public class BusResponseDto {
 
     @JsonProperty("id")
     private String uuid;
 
-    @JsonProperty("registration_number")
+    @JsonProperty("registration_plate")
     private String registrationPlate;
 
-    private Boolean status;
+    private Boolean active;
 
     @JsonProperty("tracking_device_id")
     private String trackingDeviceId;

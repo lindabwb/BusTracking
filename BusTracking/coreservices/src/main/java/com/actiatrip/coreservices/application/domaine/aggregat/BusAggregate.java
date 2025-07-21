@@ -1,7 +1,6 @@
 package com.actiatrip.coreservices.application.domaine.aggregat;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import uk.co.jemos.podam.common.PodamExclude;
 
 import java.util.List;

@@ -11,6 +11,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
+@Entity
 public class LineEntity extends AggregateRootEntity {
     private static final long serialVersionUID = 1L;
 

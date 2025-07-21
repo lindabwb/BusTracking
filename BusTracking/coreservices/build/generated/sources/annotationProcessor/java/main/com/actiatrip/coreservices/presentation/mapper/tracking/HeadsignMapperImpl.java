@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-07-17T11:46:14+0200",
-    comments = "version: 1.4.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.14.2.jar, environment: Java 17.0.15 (Amazon.com Inc.)"
+    date = "2025-07-21T15:30:59+0200",
+    comments = "version: 1.5.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.14.2.jar, environment: Java 17.0.15 (Amazon.com Inc.)"
 )
 @Component
 public class HeadsignMapperImpl implements HeadsignMapper {
@@ -38,6 +38,10 @@ public class HeadsignMapperImpl implements HeadsignMapper {
 
         HeadsignResponseDto headsignResponseDto = new HeadsignResponseDto();
 
+        headsignResponseDto.setUuid( headsignAggregate.getUuid() );
+        headsignResponseDto.setSerialNumber( headsignAggregate.getSerialNumber() );
+        headsignResponseDto.setModel( headsignAggregate.getModel() );
+
         return headsignResponseDto;
     }
 
@@ -48,6 +52,9 @@ public class HeadsignMapperImpl implements HeadsignMapper {
         }
 
         HeadsignAggregate headsignAggregate = new HeadsignAggregate();
+
+        headsignAggregate.setSerialNumber( headsignRequestDto.getSerialNumber() );
+        headsignAggregate.setModel( headsignRequestDto.getModel() );
 
         return headsignAggregate;
     }

@@ -11,6 +11,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class BusEntity extends AggregateRootEntity implements Serializable {
 
     private static final long serialVersionUID = 2946909767886762505L;

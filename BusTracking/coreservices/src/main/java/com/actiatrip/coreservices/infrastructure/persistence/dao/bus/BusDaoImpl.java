@@ -3,7 +3,7 @@ package com.actiatrip.coreservices.infrastructure.persistence.dao.bus;
 import com.actiatrip.coreservices.application.domaine.aggregat.BusAggregate;
 import com.actiatrip.coreservices.application.service.bus.BusDao;
 import com.actiatrip.coreservices.infrastructure.entities.BusEntity;
-import com.actiatrip.coreservices.infrastructure.persistence.dao.JpaRepositoryExecutor;
+import com.actiatrip.coreservices.infrastructure.persistence.repository.core.JpaRepositoryExecutor;
 import com.actiatrip.coreservices.infrastructure.persistence.mapper.BusEntityMapper;
 import com.actiatrip.coreservices.infrastructure.persistence.repository.BusRepository;
 import org.springframework.beans.factory.annotation.Autowired;

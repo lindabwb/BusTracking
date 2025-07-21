@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-07-17T11:46:15+0200",
-    comments = "version: 1.4.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.14.2.jar, environment: Java 17.0.15 (Amazon.com Inc.)"
+    date = "2025-07-21T15:30:59+0200",
+    comments = "version: 1.5.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.14.2.jar, environment: Java 17.0.15 (Amazon.com Inc.)"
 )
 @Component
 public class HeadsignEntityMapperImpl implements HeadsignEntityMapper {
@@ -37,6 +37,12 @@ public class HeadsignEntityMapperImpl implements HeadsignEntityMapper {
 
         HeadsignAggregate headsignAggregate = new HeadsignAggregate();
 
+        headsignAggregate.setId( trackingDeviceEntity.getId() );
+        headsignAggregate.setUuid( trackingDeviceEntity.getUuid() );
+        headsignAggregate.setEtag( trackingDeviceEntity.getEtag() );
+        headsignAggregate.setSerialNumber( trackingDeviceEntity.getSerialNumber() );
+        headsignAggregate.setModel( trackingDeviceEntity.getModel() );
+
         return headsignAggregate;
     }
 
@@ -47,6 +53,12 @@ public class HeadsignEntityMapperImpl implements HeadsignEntityMapper {
         }
 
         HeadsignEntity headsignEntity = new HeadsignEntity();
+
+        headsignEntity.setUuid( trackingDeviceAggregate.getUuid() );
+        headsignEntity.setEtag( trackingDeviceAggregate.getEtag() );
+        headsignEntity.setId( trackingDeviceAggregate.getId() );
+        headsignEntity.setSerialNumber( trackingDeviceAggregate.getSerialNumber() );
+        headsignEntity.setModel( trackingDeviceAggregate.getModel() );
 
         return headsignEntity;
     }

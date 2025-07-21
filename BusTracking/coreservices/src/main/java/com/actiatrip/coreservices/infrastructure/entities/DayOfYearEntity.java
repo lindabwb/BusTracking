@@ -11,6 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@Entity
 public class DayOfYearEntity extends AggregateRootEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
